@@ -1,24 +1,26 @@
 let input = document.getElementById('input');
-
+let button = document.getElementById('button');
 let script = document.createElement('script');
-form.addEventListener('click', submit)
+
+
+button.addEventListener('click', consumingPromise);
+input.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') consumingPromise();
+});
+
+
 
 function submit() {
 
     return new Promise((resolve, reject) => {
-        resolve(input.value)
+        script.src = input.value;
+        document.head.append(script);
+        resolve(input.value);
+        input.value = '';
+
     });
 }
 
-let promise = submit();
-promise.then((item) => {
-    script.src = item;
-    document.head.append(item);
-    input.value = ''
-    event.preventDefault(event)
-});
-
-
-// a ) input box where we specify resource to load  =>< script src="#"> </script>
-// b) button that when presses changes # to actual URL
-// c) Alert that says resource has been loaded
+function consumingPromise() {
+    submit().then((item) => alert(item));
+}

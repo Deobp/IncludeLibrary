@@ -1,5 +1,5 @@
 import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
-const octokit = new Octokit({ auth: `bca20de9a9a3d6825dd2e8f1390a7ebeb44094e2` });
+const octokit = new Octokit({ auth: `key` });
 let field = document.getElementById('input');
 let form = document.getElementById('form');
 let paragraph = document.getElementById('par');
